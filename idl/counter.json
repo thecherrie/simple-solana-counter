@@ -1,0 +1,86 @@
+{
+  "version": "0.1.0",
+  "name": "counter",
+  "instructions": [
+    {
+      "name": "initialize",
+      "accounts": [
+        {
+          "name": "numberAccount",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "authority",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [],
+      "returns": null
+    },
+    {
+      "name": "increment",
+      "accounts": [
+        {
+          "name": "numberAccount",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "byAmount",
+          "type": "u64"
+        }
+      ],
+      "returns": null
+    },
+    {
+      "name": "decrement",
+      "accounts": [
+        {
+          "name": "numberAccount",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "byAmount",
+          "type": "u64"
+        }
+      ],
+      "returns": null
+    }
+  ],
+  "accounts": [
+    {
+      "name": "NumberAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "value",
+            "type": "u64"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "TooLg",
+      "msg": "Modifier is too large, can only between 1-10"
+    }
+  ],
+  "metadata": {
+    "address": "7dhGUjyoV2WrBXETpb9qFV6H37YYpEXAdmSKydP9EJgF"
+  }
+}
